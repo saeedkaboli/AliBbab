@@ -1,0 +1,14 @@
+// this is section Slider
+@media screen and (min-width:1200px){
+    header,footer,div,section,img,p,h1,h2,h3,h4,h5,h6{
+        display:block;
+    }
+    // section Slider
+    section#Slider{
+        width: 100%;
+        min-height: 500px;
+        border: 1px solid black;
+        background: url(../backGroundSlider/flight-bg.jpg);
+        background-attachment: fixed;
+    }
+}
