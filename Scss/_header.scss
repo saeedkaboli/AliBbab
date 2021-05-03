@@ -1,6 +1,143 @@
 //  this is header for DeskTop
-@media screen and (min-width:992px){
+@media screen and (min-width:1200px){
     header,footer,div,section,img,p,h1,h2,h3,h4,h5,h6{
-        display: inline-block;
+        display:block;
+    }
+    //------------------- Colorss
+        $Menutext:#000000;
+        $HoverMenutext:#ffaa0f;
+
+    // display flex
+    @mixin flex {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    // flexCenter
+    @mixin flexCenter {
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+    }
+    @mixin spaceAround {
+        display: flex;
+        justify-content:space-around;
+        align-items: center;
+    }
+    // header
+    header{
+        width: 100%;
+        height: 80px;
+        box-shadow: 0px 5px 5px gray;
+        // border: 1px solid black;
+
+        .container{
+            width: 90%;
+            height: 100%;
+            margin: 0px auto;
+            // border: 1px solid red;
+
+            .row{
+                width: 100%;
+                height:100%;
+                // border: 1px solid black;
+                @include flex;
+
+                #PartLogo{
+                    width:10%;
+                    height:100%;
+                    // border: 1px solid red;
+                    @include flex();
+
+                    #Imgbaba{
+                        width: 100%;
+                        height: auto;
+                    }
+                    #baba{
+                        width: 60%;
+                        height: auto;
+                    }
+                }
+                #PartMenu{
+                    width:55%;
+                    height: 100%;
+                    // border: 1px solid green;
+
+                    #MainMenu{
+                        width: 100%;
+                        height: 100%;
+                        @include flexCenter();
+
+                        li{
+                            margin: 0px 25px;
+
+                            a{
+                                color:$Menutext;
+                                font-size: 0.9rem;
+                                font-weight: bold;
+                                border: none;
+                                &:hover{
+                                    color: $HoverMenutext;
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                #PartSingUp{
+                    width: 35%;
+                    height: 100%;
+                    // border: 1px solid blue;
+                    @include spaceAround();
+
+                    #btn{
+                    padding: 10px 20px;
+                    border: 1px solid grey;
+                    border-radius: 5px;
+                    color:$Menutext;
+                    &:hover{
+                        color: $HoverMenutext;
+                        border: 1px solid $HoverMenutext;
+                    }
+                    }
+                    #Enter{
+                        @include spaceAround();
+                        
+                        
+
+                            #L,#R{
+                                padding: 0px 5px;
+                                a{
+                                    color: $Menutext;
+                                }
+
+                                i{
+                                    font-size: 2.5rem;
+                                    &:hover{
+                                        color: $HoverMenutext;
+                                    }
+                                    }
+                                }
+                        
+                    }
+                    #Phone{
+                        border-right: 1px solid gray;
+                        padding: 0px 10px;
+                        #R,#L{
+                            @include spaceAround();
+
+                            i{
+                                font-size: 2.5rem;
+                                &:hover{
+                                    color: $HoverMenutext;
+                                }
+                            }
+                        }
+
+                    }
+                }
+                
+            }
+        }
     }
 }
