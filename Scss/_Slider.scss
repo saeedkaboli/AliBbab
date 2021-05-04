@@ -3,12 +3,105 @@
     header,footer,div,section,img,p,h1,h2,h3,h4,h5,h6{
         display:block;
     }
+       //------------------- Colorss
+       $ColorCoronatext:#000000;
+       $BgCorona:#ffaa0f;
+       $BgCoronaBtn:#ffcb6a;
+       $CoverSlider:#0000009c;
+
+   //--------------- display flex
+ 
+   // flexStart
+   @mixin flexStart {
+       display: flex;
+       justify-content:flex-start;
+       align-items: center;
+   }
+//    FlexSpaceAround
+   @mixin spaceAround {
+       display: flex;
+       justify-content:space-around;
+       align-items: center;
+   }
+//    flexCenter
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
     // section Slider
     section#Slider{
         width: 100%;
-        min-height: 500px;
-        border: 1px solid black;
+        min-height: 465px;
+        // border: 1px solid black;
         background: url(../backGroundSlider/flight-bg.jpg);
-        background-attachment: fixed;
+        background-position:center;
+        background-size: cover;
+        position: relative;
+        // background-attachment: fixed;
+
+    //   Corona Alert
+        #Corona{
+            width: 100%;
+            height: 60px;
+            background-color: $BgCorona;
+            // margin:6% 0px;
+            @include flexCenter();
+
+            // Icon Remove
+            #remove{
+              font-size: 1.5rem;
+              cursor: pointer;
+            }
+            // mtn 
+            p{
+                font-size: 0.8rem;
+                padding: 0px 10px;
+            }
+            // btn
+            a{
+                padding: 10px 15px;
+                background-color: $BgCoronaBtn;
+                color: $ColorCoronatext;
+                border-radius: 5px;
+                font-size: 0.7rem;
+                @include flexCenter();
+            }
+
+        }
+        // this is container and Cover
+          // ALL Cover
+          #CoverSlider{
+            width: 100%;
+            height: 250px;
+            background-color: $CoverSlider;
+            position: absolute;
+            bottom:0;
+            // margin-top: 20%;
+
+            .container{
+                width: 90%;
+                height: auto;
+                margin: 0 auto;
+    
+                .row{
+                    width: 100%;
+                    height: 100%;
+                  
+                  #Top,#Between,#Bottom{
+                      width: 100%;
+                      height: 10%;
+                      border: 1px solid red;
+                  }
+    
+    
+              
+                }
+
+
+          }
+
+    
+        }
     }
 }
