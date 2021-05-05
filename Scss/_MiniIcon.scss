@@ -1,0 +1,100 @@
+@media screen and (min-width:1200px){
+    header,footer,div,section,img,p,h1,h2,h3,h4,h5,h6{
+        display:block;
+    }
+       //------------------- Colorss
+       $ColorCoronatext:#000000;
+       $BgCorona:#ffaa0f;
+       $BgCoronaBtn:#ffcb6a;
+       $CoverSlider:#0000009c;
+       $ColorIcons:#ffff;
+       $HoverColorIcons:#ffaa0f;
+       $BgLoc:#585858;
+
+   //--------------- display flex
+ 
+   // flexStart
+   @mixin flexStart {
+       display: flex;
+       justify-content:flex-start;
+       align-items: center;
+   }
+//    FlexSpaceAround
+   @mixin spaceAround {
+       display: flex;
+       justify-content:space-around;
+       align-items: center;
+   }
+//    flexCenter
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin flexStart {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+//section MInIcon
+section#MiniIcon{
+    width: 100%;
+    height:150px;
+    // border: 1px solid black;
+
+    .container{
+        width: 90%;
+        height:100%;
+        margin: 0 auto;
+
+        .row{
+            width: 100%;
+            height: 100%;
+
+            #Icons{
+                width: 100%;
+                height: 100%;
+                padding-top: 20px;
+                // border: 1px solid green;
+                @include spaceAround();
+
+                li{
+                    width: 30%;
+                    height: 100%;
+                    // border: 1px solid red;
+                }
+                #GroupTicket-respansive-converstion{
+                    display: flex;
+
+                    #ImgIcons{
+                        width: 30%;
+                        height: 100%;
+                        opacity: 0.7;
+                        // border: 1px solid blue;
+                        @include flexCenter();
+                        i{
+                            color: $HoverColorIcons;
+                            font-size: 5.5rem;
+                        }
+                    }
+                    #Content{
+                        width: 70%;
+                        height: 100%;
+                        // border: 1px solid black;
+                        @include spaceAround();
+                        flex-direction: column;
+
+                        h3{
+                            font-weight: bolder;
+                        }
+                        p{
+                            font-size: 0.8rem;
+                            color: $BgLoc;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

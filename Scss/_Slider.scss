@@ -8,6 +8,9 @@
        $BgCorona:#ffaa0f;
        $BgCoronaBtn:#ffcb6a;
        $CoverSlider:#0000009c;
+       $ColorIcons:#ffff;
+       $HoverColorIcons:#ffaa0f;
+       $BgLoc:#585858;
 
    //--------------- display flex
  
@@ -27,6 +30,11 @@
 @mixin flexCenter {
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+@mixin flexStart {
+    display: flex;
+    justify-content:flex-start;
     align-items: center;
 }
     // section Slider
@@ -80,7 +88,7 @@
             // margin-top: 20%;
 
             .container{
-                width: 90%;
+                width: 95%;
                 height: auto;
                 margin: 0 auto;
     
@@ -91,7 +99,330 @@
                   #Top,#Between,#Bottom{
                       width: 100%;
                       height: 10%;
-                      border: 1px solid red;
+                    //   border: 1px solid red;
+                  }
+                  //------------------Top
+                  #Top{
+                      width: 100%;
+                      height: auto;
+                    //   border: 1px solid green;
+                      @include spaceAround();
+                      position: relative;
+                      margin-top: -45px;
+
+                     .CoverIcons{
+                         width: 90px;
+                         height: 90px;
+                         // border: 1px solid black;
+                         @include flexStart();
+                         flex-direction: column;
+                         position: relative;
+
+                         h4{
+                            //  border: 1px solid blue;
+                             min-width: 200px;
+                             position: absolute;
+                             bottom: -20%;
+                             color: $ColorIcons;
+                             @include flexCenter();
+                             cursor: pointer;
+                         }
+                          #B{
+                              top: 50%;
+                              left: 50%;
+                              transform: translate(-50%,-50%);
+                          }
+                         #T,#B{
+                             width: 100%;
+                             height: 50%;
+                             position: absolute;
+                             @include flexCenter();
+                           
+                             //Top that just one 
+                             .Squre{
+                                display: flex;
+                                width: 50%;
+                                height: 100%;
+                                background-color: $CoverSlider;
+
+                             }
+                             #SR{
+                                 border-radius: 0 100% 0 0;
+                             }
+                             #SL{
+                                 border-radius: 100% 0 0 0;
+                             }
+                             
+                             .Icons{
+                                width: 60px;
+                                height: 60px;
+                                border: 1px solid #fff;
+                                border-radius: 50%;
+                                @include flexCenter();
+
+      
+                                i{
+                                    font-size: 2.5rem;
+                                    color:$ColorIcons;
+                                    position: absolute;
+                                    cursor: pointer;
+                                    
+                                    
+                                }
+                         }
+                         
+                        &:hover i ,&:hover .Icons,&:hover ~h4{
+                            color: $HoverColorIcons;
+                            cursor: pointer;
+                        }
+
+                        }
+                        
+                     }
+                  }
+                  //----------------BetWeen
+                  #Between{
+                      margin-top: 20px;
+                      width: 100%;
+                      height: 70px;
+                    //   border: 1px solid green;
+                      display: flex;
+                      align-items: center;
+                    #AllRdio{
+                        width: 93%;
+                        height: auto;
+                        margin:0 auto;
+                        display: flex;
+                        align-items: center;
+
+                        li{
+                            width: auto;
+                            height: auto;
+                            padding: 0px 5px;
+                            h4{
+                                color: $ColorIcons;
+                            }
+                            input[type='radio']:after {
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 15px;
+                                top: -2px;
+                                left: -1px;
+                                position: relative;
+                                background-color: #d1d3d1;
+                                content: '';
+                                display: inline-block;
+                                visibility: visible;
+                                border: 2px solid white;
+                            }
+                        
+                            input[type='radio']:checked:after {
+                                width: 15px;
+                                height: 15px;
+                                border-radius: 15px;
+                                top: -2px;
+                                left: -1px;
+                                position: relative;
+                                background-color: #ffa500;
+                                content: '';
+                                display: inline-block;
+                                visibility: visible;
+                                border: 2px solid white;
+                            }
+                        }
+                    }
+                      
+                  }
+
+                  //----------------Bottom
+                  #Bottom{
+                      width: 100%;
+                      height: 100px;
+                    //   border: 1px solid green;
+                    
+                      #AllTravel{
+                          width: 100%;
+                          height: 100%;
+                          @include spaceAround();
+
+                          .Right{
+                              width: 50%;
+                              height: 100%;
+                            //   border: 1px solid red;
+                           //   @include flexCenter();
+
+                              //input Right
+                              #InputPartsAll{
+                                @include flexStart();
+                                  width: 100%;
+                                  height:55px;
+                                //   border: 1px solid blue;
+                                  overflow: auto;
+                                  position: relative;
+                                  margin-right: 50px;
+                                  
+
+                                      #Loc{
+                                          width: 10%;
+                                          height: 100%;
+                                          background-color: $ColorIcons;
+                                          @include flexCenter();
+
+                                          i{
+                                              color: $BgLoc;
+                                          }
+                                      }
+                                      #Input{
+                                          width: 35%;
+                                          height: 100%;
+
+                                          input{
+                                              width: 100%;
+                                              height: 100%;
+                                              border: none;
+                                              padding-right: 5px;
+                                              font-size: 0.9rem;
+                                              color: $BgLoc;
+                                            //   border-left: 1px solid $BgLoc;
+
+                                              &:focus{
+                                                  outline: none;
+                                              }
+                                          }
+                                         
+
+                                      }
+                                      #Pikan{
+                                        width: 30px;
+                                        height: 30px;
+                                        border-radius: 50%;
+                                        position: absolute;
+                                        border: 1px solid gray;
+                                        z-index: 20;
+                                        top: 50%;
+                                        left: 55%;
+                                        transform: translate(-50%,-50%);
+                                        @include flexCenter();
+                                        background-color: $ColorIcons;
+                                        cursor: pointer;
+                                        i{
+                                            font-size: 0.9rem;
+                                            color: $HoverColorIcons;
+                                            cursor: pointer;
+
+                                        }
+                                        &:hover i{
+                                            color: $ColorIcons;
+                                            
+                                        }
+                                        &:hover{
+                                            background-color: $HoverColorIcons;
+                                        }
+                                    }
+                                  }
+
+                                  
+                              }
+                         .Left{
+
+                            width: 50%;
+                            height: 100%;
+                        //    border:1px solid  blue;
+                            //@include flexCenter();
+
+                           #Data-Btns{
+                               width: 100%;
+                               height: 55px;
+                            //    border: 1px solid green;
+                               display: flex;
+                           
+                             // input Data and Calnder
+                            .DataGo-Back{
+                                width: 50%;
+                                height: 100%;
+                                // border: 1px solid blue;
+                                display: flex;
+                                overflow: auto;
+                                border-radius: 5px;
+
+                                .IconDataGo{
+                                    width: 50px;
+                                    height: 100%;
+                                    background-color: $ColorIcons;
+                                    @include flexCenter();
+
+                                    i{
+                                        color: $BgLoc;
+                                    }
+                                }
+                                input{
+                                    width: 40%;
+                                    height: 100%;
+                                    background-color: $ColorIcons;
+                                    padding-left:5px;
+                                    border: none;  
+                                    &:focus{
+                                        outline: none;
+                                    }                                  
+                                }
+                            }
+                            // input Passenger
+                            .Passenger{
+                                width: 20%;
+                                height: 100%;
+                                // border: 1px solid red;
+                                display: flex;
+                                margin: 0px 5px;
+                                border-radius: 5px;
+                                overflow: auto;
+
+                                .IconPerson{
+                                    width:50px;
+                                    height: 100%;
+                                    background-color: $ColorIcons;
+                                    @include flexCenter();
+                                    i{
+                                        color: $BgLoc;
+                                    }
+
+                                }
+                                input{
+                                    width: 75%;
+                                    height: 100%;
+                                    border: none;
+                                    padding-left: 5px;
+                                    &:focus{
+                                        outline: none;
+                                    }
+                                }
+                            }
+                            // buutton Search
+                            .BtnSreach{
+                                width: 30%;
+                                height: 100%;
+                                // border: 1px solid green;
+                                @include flexCenter();
+
+                                a{
+                                    @include flexCenter();
+                                 width: 100%;
+                                 height: 100%;
+                                 background-color: $BgCorona;
+                                 color: $ColorIcons;
+                                 border-radius: 5px;
+                                 font-size: 1.3rem;
+                                }
+                            }
+                           }
+
+
+
+
+
+
+                              }
+                          }
+                      }
                   }
     
     
@@ -104,4 +435,4 @@
     
         }
     }
-}
+
